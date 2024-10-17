@@ -70,9 +70,7 @@ contract FundMeTest is Test {
     function testOnlyOwnerCanWithdraw() public funded {
         vm.prank(fundMe.getOwner());
         fundMe.withdraw();
-        assertEq(address(fundMe).balacd /home/benmilch/foundry23/foundry-fund-me-f23/test
-ls
-nce, 0);
+        assertEq(address(fundMe).balance, 0);
     }
 
     function testWithdrawWithASingleFunder() public funded {
