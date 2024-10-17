@@ -29,10 +29,7 @@ contract InteractionsTest is Test {
         fundFundMe.fundFundMe(address(fundMe));
 
         //Log contract balance after funding to ensure it received the funds
-        console.log(
-            "FundMe contract balance after funding:",
-            address(fundMe).balance
-        );
+        console.log("FundMe contract balance after funding:", address(fundMe).balance);
         assert(address(fundMe).balance == 1 ether); //Ensure contract has 1 ether
 
         WithdrawFundMe withdrawFundMe = new WithdrawFundMe();
