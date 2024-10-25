@@ -26,10 +26,13 @@ contract InteractionsTest is Test {
 
         // Simulate USER calling the function to fund with 1 ether
         vm.deal(USER, STARTING_BALANCE);
-        fundFundMe.fundFundMe(address(fundMe));
+        fundFundMe.fundFundMeWithETH(address(fundMe));
 
         //Log contract balance after funding to ensure it received the funds
-        console.log("FundMe contract balance after funding:", address(fundMe).balance);
+        console.log(
+            "FundMe contract balance after funding:",
+            address(fundMe).balance
+        );
         assert(address(fundMe).balance == 1 ether); //Ensure contract has 1 ether
 
         WithdrawFundMe withdrawFundMe = new WithdrawFundMe();
